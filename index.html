@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+
+    <style>
+        body
+        {
+            background-image: url(https://thelens.news/app/uploads/2019/12/738-scaled.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: aliceblue;
+        }
+
+.box 
+{
+width: 500px;
+padding: 40px;
+margin: 30px;
+padding-top: 30px;
+padding-right: 40px;
+margin-left: 70px;
+margin-top: 40px;
+opacity: 0.5;
+background-color: rgb(48, 46, 46);
+border-radius: 150px;
+color: rgb(255, 255, 255);
+font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p
+{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    font-size: medium;
+    font-size: large;
+}
+
+label
+{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    font-size: medium;
+    font-size: large;
+}
+
+input
+{
+    border-radius: 15px;
+    color: rgb(0, 0, 0);
+    text-align:center;
+    align-items:flex-end;
+    margin-left: 50px;
+    font-size:medium;
+}
+
+#output
+{
+    font-size: 15px;
+    border-radius: 20px;
+    padding: 8px;
+    width: 200px;
+    font-weight: bold;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    
+<center>
+    <p style=" font-weight: bold; font-size: large; padding-left: 1200px;">Developed By Sreeram S</p>
+</Center>
+
+    
+        <div class="box">
+            <center>
+        <h1> STROKE PREDICTION</h1> 
+    <form action="output" method="POST">
+
+
+        <label for="gender" style="padding-right: 100px;">Gender : </label>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">others</option>
+          </select>
+
+        
+        <p>Enter Age :
+        <input type="number" id="age" name="age" min="1" max = "100" style="width: 100px;" placeholder=" e.g 1-100">
+        </p>
+
+
+        <label for="hypertension" style="padding-right: 100px;">Hypertension : </label>
+        <select name="hypertension" id="hypertension">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+        <br><br>
+
+
+          <label for="heart-disease" style="padding-right: 100px;">Any Heart Diseases : </label>
+          <select name="heart-disease" id="heart-disease">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+
+        <br><br>
+
+
+        <label for="marriage" style="padding-right: 100px;">Are You Married : </label>
+            <select name="marriage" id="marriage">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+        <br><br>
+        
+        <label for="worktype" style="padding-right: 100px;">Work-Type : </label>
+        <select name="worktype" id="worktype">
+            <option value="private">Private</option>
+            <option value="self-employed">Self-Employed</option>
+            <option value="government">Government</option>
+            <option value="student">Student</option>
+            <option value="others">Others</option>
+            </select>
+
+        <br><br>
+
+
+        <label for="residency" style="padding-right: 100px;">Residency Type : </label>
+        <select name="residency" id="residency">
+                <option value="urban">Urban Area</option>
+                <option value="rual">Rural Area</option>
+            </select>
+
+        <br>
+
+        <p>Enter Glucose Levels :
+        <input type="number" id="glucose" name="glucose" min="80" max="400" style="width: 150px;" placeholder=" e.g 80-300"></p>
+
+        <p>Enter Your BMI :
+        <input type="number" id="bmi" name="bmi" min="16" step="0.1" style="width: 150px;" placeholder="e.g 18-45"></p>
+
+
+        <label for="smoking" style="padding-right: 100px;">Smoking Status : </label>
+        <select name="smoking" id="smoking">
+            <option value="unknown">Unknown</option>
+            <option value="never smoked">never smoked</option>
+            <option value="smokes">smokes</option>
+            <option value="formerly smoked">formerly smoked</option>
+            <option value="others">Others</option>
+            </select>
+
+        <br><br>
+
+        <input type="submit" value="SUBMIT" id="output"> 
+
+        {% for message in get_flashed_messages()%}
+        <p style="font-size: 18px;"> {{message}} </p>
+        {% endfor %}
+
+    </form>
+</center>
+</div>
+
+
+
+
+
+</body>
+</html>
